@@ -62,6 +62,7 @@ export default function LandingPage() {
 
       {/* Hero */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 pt-12 md:pt-16 pb-8 md:pb-10">
+        <div className="glow-hero" />
         <div className="flex items-center gap-2 bg-[#111811] border border-white/10 rounded-full px-3 py-1 mb-6 md:mb-8">
           <span className="bg-green-500 text-black text-xs font-bold px-2 py-0.5 rounded-full">
             NEW
@@ -70,12 +71,11 @@ export default function LandingPage() {
             AI species detection just launched
           </span>
         </div>
-        <h1 className="text-5xl sm:text-5xl md:text-9xl font-bold text-white mb-4 md:mb-6 leading-tight">
-          Spot and report.
+        <h1 className="text-5xl sm:text-5xl md:text-8xl font-bold text-white mb-4 md:mb-6 leading-tight">
+          Protect Ecosystems <br /><span className="">with Satellite Intelligence</span> 
         </h1>
-        <p className="text-gray-400 text-base md:text-lg max-w-sm md:max-w-md mb-8 md:mb-10 px-2 ">
-          Upload a photo of a plant, let our AI identify invasive species, and
-          alert the right authorities automatically.
+        <p className="text-gray-400 text-base md:text-lg max-w-2xl md:max-w-3xl mb-8 md:mb-10 px-2">
+      Detect invasive species and monitor vegetation health using satellite NDVI analysis and deep learning models — all in one smart platform.
         </p>
         <Link
           to="/signup"
