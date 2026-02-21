@@ -1,5 +1,9 @@
 import "../App.css";
 import { Link } from "react-router-dom";
+import lantanaCamaraImg from "../assets/lantana-camara.jpeg";
+import partheniumImg from "../assets/Parthenium.jpeg";
+import prosopisJulifloraImg from "../assets/Prosopis Juliflora.jpeg";
+import mapClusterImg from "../assets/map cluster.jpeg";
 
 export default function LandingPage() {
   return (
@@ -61,25 +65,33 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero */}
-      <div className="relative z-10 flex flex-col items-center text-center px-4 pt-12 md:pt-16 pb-8 md:pb-10">
-        <div className="glow-hero" />
-        <div className="flex items-center gap-2 bg-[#111811] border border-white/10 rounded-full px-3 py-1 mb-6 md:mb-8">
-          <span className="bg-green-500 text-black text-xs font-bold px-2 py-0.5 rounded-full">
+      <div className="relative z-10 flex flex-col items-center text-center bg-radial from-green-950 to-black pt-20 pb-20 px-4 overflow-hidden">
+        <div className="glow-hero absolute inset-0 pointer-events-none" />
+
+        <div className="border border-[#262527] bg-black rounded-full flex items-center justify-center px-3 py-2 gap-2 mx-auto max-w-max mb-8">
+          <span className="rounded-full px-2 py-1 bg-green-500 text-[10px] font-bold text-black">
             NEW
           </span>
-          <span className="text-xs md:text-sm text-gray-300">
+          <span className="text-base font-normal text-[#22c55e]">
             AI species detection just launched
           </span>
         </div>
-        <h1 className="text-5xl sm:text-5xl md:text-8xl font-bold text-white mb-4 md:mb-6 leading-tight">
-          Protect Ecosystems <br /><span className="">with Satellite Intelligence</span> 
+
+        <h1 className="text-6xl md:text-8xl tracking-tight font-sans font-semibold text-white leading-tight mb-6">
+          Protect Ecosystems <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-green-500">
+            with Satellite Intelligence
+          </span>
         </h1>
-        <p className="text-gray-400 text-base md:text-lg max-w-2xl md:max-w-3xl mb-8 md:mb-10 px-2">
-      Detect invasive species and monitor vegetation health using satellite NDVI analysis and deep learning models — all in one smart platform.
+
+        <p className="text-white text-xl md:text-2xl max-w-3xl mb-10">
+          Detect invasive species and monitor vegetation health using satellite
+          NDVI analysis and deep learning models — all in one smart platform.
         </p>
+
         <Link
           to="/signup"
-          className="bg-white text-black font-medium text-sm px-6 py-2.5 rounded-full hover:bg-gray-100 transition-colors"
+          className="bg-green-500 hover:bg-green-400 text-black font-semibold px-8 py-3 rounded-full transition-colors"
         >
           Report a Sighting
         </Link>
@@ -88,29 +100,29 @@ export default function LandingPage() {
       {/* How it Works */}
       <section
         id="how"
-        className="relative z-10 px-4 md:px-8 py-14 md:py-24 max-w-5xl mx-auto"
+        className="relative z-10 px-4 md:px-8 py-14 md:py-24 max-w-6xl mx-auto"
       >
-        <div className="text-center mb-14 -mt-20">
+        <div className="text-center mb-14 -mt-15">
           <span className="text-green-500 text-sm font-semibold uppercase tracking-widest">
             Process
           </span>
-          <h2 className="text-2xl md:text-4xl font-bold text-white mt-2">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-white mt-2">
             How EcoGuard Works
           </h2>
-          <p className="text-gray-400 mt-3 max-w-lg mx-auto text-sm md:text-base">
-            Three simple steps to protect ecosystems from invasive species —
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg">
+            Four simple steps to protect ecosystems from invasive species —
             powered by AI and satellite data.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              step: "01",
-              title: "Capture & Upload",
-              desc: "Take a photo or upload an existing image of the plant you suspect is invasive.",
-              icon: (
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6">
+          {/* Card 1 - Large featured card */}
+          <div className="md:col-span-4 bg-[#0d150d] border border-white/10 rounded-3xl p-8 md:p-10 hover:border-green-500/40 transition-all duration-300 group">
+            <div className="flex items-start justify-between mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-700/20 border border-green-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <svg
-                  className="w-10 h-10 text-green-400"
+                  className="w-7 h-7 text-green-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -128,15 +140,44 @@ export default function LandingPage() {
                     d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-              ),
-            },
-            {
-              step: "02",
-              title: "AI Recognition",
-              desc: "Our species model analyzes the image and returns an identification with confidence score.",
-              icon: (
+              </div>
+              <span className="text-xs font-mono text-green-500/60 bg-green-500/10 px-3 py-1 rounded-full">
+                STEP 01
+              </span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3">
+              Capture & Upload
+            </h3>
+            <p className="text-gray-400 text-base leading-relaxed mb-6">
+              Take a photo using your device camera or upload an existing image
+              of the plant you suspect is invasive. Our system supports multiple
+              formats and automatically processes the image for optimal
+              analysis.
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-[#111811] rounded-xl p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-xs text-gray-500">File Types</span>
+                </div>
+                <p className="text-sm text-white font-medium">JPG, PNG, HEIC</p>
+              </div>
+              <div className="bg-[#111811] rounded-xl p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-xs text-gray-500">Max Size</span>
+                </div>
+                <p className="text-sm text-white font-medium">10MB per image</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 - AI Recognition */}
+          <div className="md:col-span-2 bg-[#0d150d] border border-white/10 rounded-3xl p-6 md:p-8 hover:border-green-500/40 transition-all duration-300 group flex flex-col">
+            <div className="flex items-start justify-between mb-6">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-green-700/20 border border-green-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <svg
-                  className="w-10 h-10 text-green-400"
+                  className="w-6 h-6 text-green-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -148,15 +189,78 @@ export default function LandingPage() {
                     d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-              ),
-            },
-            {
-              step: "03",
-              title: "Verify & Alert",
-              desc: "Cross-checked with satellite data. Report automatically escalated to authorities when threshold is met.",
-              icon: (
+              </div>
+              <span className="text-xs font-mono text-green-500/60 bg-green-500/10 px-3 py-1 rounded-full">
+                STEP 02
+              </span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
+              AI Recognition
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              Our deep learning model analyzes the image and returns species
+              identification with confidence metrics.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg
+                    className="w-4 h-4 text-green-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white text-sm font-medium mb-1">
+                    Instant Analysis
+                  </p>
+                  <p className="text-gray-500 text-xs">
+                    Results in under 2 seconds
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg
+                    className="w-4 h-4 text-green-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white text-sm font-medium mb-1">
+                    96.8% Accuracy
+                  </p>
+                  <p className="text-gray-500 text-xs">
+                    Validated by field experts
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 - Satellite NDVI Prediction */}
+          <div className="md:col-span-2 bg-[#0d150d] border border-white/10 rounded-3xl p-6 md:p-8 hover:border-green-500/40 transition-all duration-300 group flex flex-col">
+            <div className="flex items-start justify-between mb-6">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-green-700/20 border border-green-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <svg
-                  className="w-10 h-10 text-green-400"
+                  className="w-6 h-6 text-green-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -168,29 +272,128 @@ export default function LandingPage() {
                     d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-              ),
-            },
-          ].map(({ step, icon, title, desc }) => (
-            <div
-              key={step}
-              className="bg-[#0d150d] border border-white/10 rounded-2xl p-6 hover:border-green-500/40 transition-colors"
-            >
-              <div className="flex items-center justify-between mb-4">
-                {icon}
-                <span className="text-green-500/40 text-4xl font-bold">
-                  {step}
-                </span>
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
+              <span className="text-xs font-mono text-green-500/60 bg-green-500/10 px-3 py-1 rounded-full">
+                STEP 03
+              </span>
             </div>
-          ))}
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
+              Satellite NDVI Prediction
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              Cross-verify sightings with real-time satellite vegetation health
+              data using NDVI analysis.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg
+                    className="w-4 h-4 text-green-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white text-sm font-medium mb-1">
+                    2km Coverage Radius
+                  </p>
+                  <p className="text-gray-500 text-xs">Wide area monitoring</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg
+                    className="w-4 h-4 text-green-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white text-sm font-medium mb-1">
+                    10m Resolution
+                  </p>
+                  <p className="text-gray-500 text-xs">
+                    High-precision imaging
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3"></div>
+            </div>
+          </div>
+
+          {/* Card 4 - Verify & Alert */}
+          <div className="md:col-span-4 bg-[#0d150d] border border-white/10 rounded-3xl p-6 md:p-8 hover:border-green-500/40 transition-all duration-300 group">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-green-700/20 border border-green-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg
+                  className="w-6 h-6 text-green-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                  />
+                </svg>
+              </div>
+              <span className="text-xs font-mono text-green-500/60 bg-green-500/10 px-3 py-1 rounded-full">
+                STEP 04
+              </span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
+              Verify & Alert
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              Reports cluster in real-time across geographic zones. When
+              detection threshold is reached, system automatically escalates
+              alerts to relevant authorities and environmental departments.
+            </p>
+            <div className="grid grid-cols-3 gap-3">
+              <div className="bg-[#111811] rounded-xl p-4 text-center">
+                <p className="text-xl md:text-2xl font-bold text-green-400">
+                  14
+                </p>
+                <p className="text-xs text-gray-500 mt-1">Active Clusters</p>
+              </div>
+              <div className="bg-[#111811] rounded-xl p-4 text-center">
+                <p className="text-xl md:text-2xl font-bold text-green-400">
+                  3
+                </p>
+                <p className="text-xs text-gray-500 mt-1">Pending Alerts</p>
+              </div>
+              <div className="bg-[#111811] rounded-xl p-4 text-center">
+                <p className="text-xl md:text-2xl font-bold text-green-400">
+                  6
+                </p>
+                <p className="text-xs text-gray-500 mt-1">Escalated</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="relative z-10 border-y border-white/5 bg-[#0a110a] py-14">
-        <div className="max-w-5xl mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+      <section className="relative z-10 px-4 md:px-8 py-14">
+        <div className="max-w-5xl mx-auto border border-white/5 bg-[#0a110a] rounded-3xl px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
           {[
             { value: "2,400+", label: "Sightings Reported" },
             { value: "38", label: "Species Identified" },
@@ -214,56 +417,123 @@ export default function LandingPage() {
           <span className="text-green-500 text-sm font-semibold uppercase tracking-widest">
             Database
           </span>
-          <h2 className="text-2xl md:text-4xl font-bold text-white mt-2">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-white mt-2">
             Tracked Invasive Species
           </h2>
-          <p className="text-gray-400 mt-3 max-w-lg mx-auto text-sm md:text-base">
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg">
             Our model is trained to recognize the most damaging invasive plants
             threatening local ecosystems.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {[
-            { name: "Water Hyacinth", threat: "High" },
-            { name: "Lantana Camara", threat: "High" },
-            { name: "Parthenium", threat: "Critical" },
-            { name: "Prosopis Juliflora", threat: "High" },
-            { name: "Mile-a-Minute", threat: "Medium" },
-            { name: "Giant Reed", threat: "High" },
-            { name: "Salvinia Molesta", threat: "Critical" },
-            { name: "Mimosa Pigra", threat: "Medium" },
-          ].map(({ name, threat }) => (
+            {
+              name: "Lantana Camara",
+              threat: "High",
+              location: "Western Ghats",
+              image: lantanaCamaraImg,
+              isRealImage: true,
+            },
+            {
+              name: "Parthenium",
+              threat: "Critical",
+              location: "Pan India",
+              image: partheniumImg,
+              isRealImage: true,
+            },
+            {
+              name: "Prosopis Juliflora",
+              threat: "High",
+              location: "Arid Zones",
+              image: prosopisJulifloraImg,
+              isRealImage: true,
+            },
+          ].map(({ name, threat, location, image, isRealImage }) => (
             <div
               key={name}
-              className="bg-[#0d150d] border border-white/10 rounded-xl p-4 hover:border-green-500/40 transition-colors"
+              className="bg-[#0d150d] border border-white/10 rounded-2xl overflow-hidden hover:border-green-500/40 transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/20 to-green-700/20 border border-green-500/30 flex items-center justify-center mb-3">
-                <svg
-                  className="w-6 h-6 text-green-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <p className="text-white text-sm font-medium">{name}</p>
-              <span
-                className={`text-xs mt-1 inline-block px-2 py-0.5 rounded-full font-medium ${
-                  threat === "Critical"
-                    ? "bg-red-500/20 text-red-400"
-                    : threat === "High"
-                      ? "bg-orange-500/20 text-orange-400"
-                      : "bg-yellow-500/20 text-yellow-400"
-                }`}
+              {/* Image Area */}
+              <div
+                className={`relative h-48 flex items-center justify-center ${!isRealImage ? image : ""}`}
               >
-                {threat}
-              </span>
+                {isRealImage ? (
+                  <img
+                    src={image}
+                    alt={name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <svg
+                    className="w-16 h-16 text-green-400/40 group-hover:text-green-400/60 transition-colors"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                )}
+                {/* Threat Badge */}
+                <div className="absolute top-4 right-4">
+                  <span
+                    className={`text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-sm ${
+                      threat === "Critical"
+                        ? "bg-red-500/90 text-white"
+                        : threat === "High"
+                          ? "bg-orange-500/90 text-white"
+                          : "bg-yellow-500/90 text-black"
+                    }`}
+                  >
+                    {threat}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-5">
+                <h3 className="text-white text-lg font-semibold mb-2 group-hover:text-green-400 transition-colors">
+                  {name}
+                </h3>
+
+                {/* Location */}
+                <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <span>{location}</span>
+                </div>
+
+                {/* Tags */}
+                <div className="flex gap-2">
+                  <span className="text-xs px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
+                    Invasive
+                  </span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    Tracked
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -279,10 +549,10 @@ export default function LandingPage() {
             <span className="text-green-500 text-sm font-semibold uppercase tracking-widest">
               Community
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold text-white mt-2 mb-4">
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white mt-2 mb-4">
               Citizens powering ecological defence
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-6">
+            <p className="text-gray-400 text-base leading-relaxed mb-6">
               Every sighting you report is cross-referenced with others nearby.
               When enough reports cluster in one area, our system automatically
               escalates the alert to the relevant government body.
@@ -323,25 +593,12 @@ export default function LandingPage() {
               </span>
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
             </div>
-            <div className="flex-1 bg-[#111811] rounded-xl flex items-center justify-center">
-              <div className="flex flex-col items-center gap-2">
-                <svg
-                  className="w-12 h-12 text-gray-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                  />
-                </svg>
-                <span className="text-gray-500 text-sm">
-                  Map view coming soon
-                </span>
-              </div>
+            <div className="flex-1 bg-[#111811] rounded-xl overflow-hidden flex items-center justify-center">
+              <img
+                src={mapClusterImg}
+                alt="Live Cluster Map"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="mt-4 flex gap-3">
               {[
@@ -365,10 +622,10 @@ export default function LandingPage() {
       {/* CTA Banner */}
       <section className="relative z-10 px-4 md:px-8 py-14 md:py-24 text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white mb-4">
             Ready to protect your ecosystem?
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-gray-400 text-lg mb-8">
             Join thousands of citizens actively monitoring and reporting
             invasive species across the country.
           </p>
