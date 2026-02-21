@@ -1,14 +1,22 @@
 .glow-hero {
   position: absolute;
-  bottom: -60px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: min(700px, 100vw);
-  height: 420px;
-  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.25) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .glow-hero {
+    width: 100vw;
+    height: 400px;
+  }
 }
 
 .glow-cta {
