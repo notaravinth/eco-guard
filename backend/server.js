@@ -6,8 +6,6 @@ const multer = require("multer");
 const fetch = require("node-fetch");
 const FormData = require("form-data");
 const { createClient } = require("@supabase/supabase-js");
-const { checkInvasive } = require("./invasiveSpecies");
-
 const app = express();
 app.use(cors()); // allow all origins in dev — lock down in production
 app.use(express.json());
@@ -55,11 +53,11 @@ app.post("/satellite-check", (req, res) => {
 });
 
 /* ===========================
-   🔹 PLANT IDENTIFICATION via Pl@ntNet API
-   + Invasive species check
+   🔹 PLANT IDENTIFICATION via local ML model server (port 5002)
+   + Invasive species info embedded in model_server response
 =========================== */
-const PLANTNET_API_KEY = process.env.PLANTNET_API_KEY;
-const PLANTNET_URL = `https://my-api.plantnet.org/v2/identify/all?include-related-images=false&no-reject=false&nb-results=5&lang=en&api-key=${PLANTNET_API_KEY}`;
+const MODEL_SERVER_URL =
+  process.env.MODEL_SERVER_URL || "http://127.0.0.1:5002";
 
 app.post("/predict", upload.single("image"), async (req, res) => {
   try {
@@ -67,21 +65,16 @@ app.post("/predict", upload.single("image"), async (req, res) => {
       return res.status(400).json({ error: "No image uploaded" });
     }
 
-    if (!PLANTNET_API_KEY) {
-      return res.status(500).json({ error: "PLANTNET_API_KEY not configured" });
-    }
-
-    // Build multipart form for Pl@ntNet API
+    // Forward image to Python model server
     const form = new FormData();
-    form.append("images", req.file.buffer, {
+    form.append("image", req.file.buffer, {
       filename: req.file.originalname || "plant.jpg",
       contentType: req.file.mimetype || "image/jpeg",
     });
-    form.append("organs", "auto");
 
-    console.log("[PlantNet] Sending image for identification...");
+    console.log("[ModelServer] Sending image for identification...");
 
-    const response = await fetch(PLANTNET_URL, {
+    const response = await fetch(`${MODEL_SERVER_URL}/predict`, {
       method: "POST",
       body: form,
       headers: form.getHeaders(),
@@ -89,74 +82,23 @@ app.post("/predict", upload.single("image"), async (req, res) => {
 
     if (!response.ok) {
       const errText = await response.text();
-      console.error("[PlantNet] API error:", response.status, errText);
+      console.error("[ModelServer] Error:", response.status, errText);
       return res.status(502).json({
-        error: `Pl@ntNet API error (${response.status})`,
+        error: `Model server error (${response.status})`,
         details: errText,
       });
     }
 
-    const plantData = await response.json();
-
-    if (!plantData.results || plantData.results.length === 0) {
-      return res.json({
-        species: "Unknown",
-        confidence: 0,
-        invasive: false,
-        message: "Could not identify this plant. Try a clearer photo.",
-      });
-    }
-
-    // Best match
-    const top = plantData.results[0];
-    const scientificName =
-      top.species?.scientificNameWithoutAuthor || "Unknown";
-    const commonNames = top.species?.commonNames || [];
-    const family = top.species?.family?.scientificNameWithoutAuthor || "";
-    const confidence = top.score || 0;
-    const gbifId = top.gbif?.id || null;
-
-    // Check if invasive
-    const invasiveResult = checkInvasive(scientificName);
-
-    // Build top-5 results for frontend
-    const topResults = plantData.results.slice(0, 5).map((r) => {
-      const rInvasive = checkInvasive(
-        r.species?.scientificNameWithoutAuthor || "",
-      );
-      return {
-        scientificName: r.species?.scientificNameWithoutAuthor || "Unknown",
-        commonNames: r.species?.commonNames || [],
-        family: r.species?.family?.scientificNameWithoutAuthor || "",
-        score: r.score || 0,
-        invasive: rInvasive.invasive,
-        invasiveInfo: rInvasive.info || null,
-      };
-    });
-
-    // Build species display name
-    const displayName =
-      commonNames.length > 0
-        ? `${commonNames[0]} (${scientificName})`
-        : scientificName;
+    const result = await response.json();
 
     console.log(
-      `[PlantNet] Identified: ${displayName} (${(confidence * 100).toFixed(1)}%) | Invasive: ${invasiveResult.invasive}`,
+      `[ModelServer] Identified: ${result.species} (${((result.confidence || 0) * 100).toFixed(1)}%) | Invasive: ${result.invasive}`,
     );
 
-    res.json({
-      species: displayName,
-      scientificName,
-      commonNames,
-      family,
-      confidence: Math.round(confidence * 10000) / 10000,
-      gbifId,
-      invasive: invasiveResult.invasive,
-      invasiveInfo: invasiveResult.info || null,
-      topResults,
-    });
+    // Pass through the model server response directly (shape is already correct)
+    res.json(result);
   } catch (err) {
-    console.error("❌ Prediction error:", err.message);
+    console.error("Prediction error:", err.message);
     res.status(500).json({
       error: "Plant identification failed: " + err.message,
     });

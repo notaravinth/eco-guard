@@ -117,7 +117,7 @@ export default function ImageCaptureModal({ onClose, onSubmit }: Props) {
         const encoded = encodeURIComponent(query.trim());
         const res = await fetch(
           `https://nominatim.openstreetmap.org/search?format=json&q=${encoded}&limit=5&countrycodes=in`,
-          { headers: { "User-Agent": "EcoGuard/1.0" } },
+          { headers: { "User-Agent": "EcoSentry/1.0" } },
         );
         const data = (await res.json()) as SearchResult[];
         setSearchResults(data);

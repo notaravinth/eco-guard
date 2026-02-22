@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
+import logoImg from "../assets/logo.jpeg";
 import lantanaCamaraImg from "../assets/lantana-camara.jpeg";
 import partheniumImg from "../assets/Parthenium.jpeg";
 import prosopisJulifloraImg from "../assets/Prosopis Juliflora.jpeg";
@@ -28,23 +29,15 @@ export default function LandingPage() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 focus:outline-none"
         >
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-700 flex items-center justify-center">
-            <svg
-              className="w-5 h-5 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+          <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+            <img
+              src={logoImg}
+              alt="EcoSentry"
+              className="w-full h-full object-cover scale-150 origin-center"
+            />
           </div>
-          <span className="text-white font-semibold text-sm tracking-wide">
-            EcoGuard
+          <span className="text-white font-semibold text-5sm tracking-wide">
+            EcoSentry
           </span>
         </button>
         <div className="hidden md:flex items-center gap-1 bg-[#111811] border border-white/10 rounded-full px-2 py-1">
@@ -127,7 +120,7 @@ export default function LandingPage() {
             Process
           </span>
           <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-white mt-2">
-            How EcoGuard Works
+            How EcoSentry Works
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg">
             Four simple steps to protect ecosystems from invasive species —
@@ -673,24 +666,20 @@ export default function LandingPage() {
         className="relative z-10 border-t border-white/5 px-4 md:px-8 py-8 md:py-10"
       >
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-green-700 flex items-center justify-center">
-              <svg
-                className="w-4 h-4 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          <Link to="/" className="flex flex-col items-start gap-1">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                <img
+                  src={logoImg}
+                  alt="EcoSentry"
+                  className="w-full h-full object-cover scale-150 origin-center"
                 />
-              </svg>
+              </div>
+              <span className="text-white font-semibold text-sm">
+                EcoSentry
+              </span>
             </div>
-            <span className="text-white font-semibold text-sm">EcoGuard</span>
-            <span className="text-gray-600 text-xs ml-1">
+            <span className="text-gray-500 text-xs pl-1">
               Invasive Species Prediction
             </span>
           </Link>
@@ -706,7 +695,7 @@ export default function LandingPage() {
             ))}
           </div>
           <p className="text-gray-600 text-xs">
-            © 2026 EcoGuard. EcoTech Track.
+            © 2026 EcoSentry. EcoTech Track.
           </p>
         </div>
       </footer>

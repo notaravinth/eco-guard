@@ -10,6 +10,8 @@ node_modules/
 # Logs
 *.log
 npm-debug.log*
+model_server_out.txt
+model_server_err.txt
 
 # OS Files
 .DS_Store
