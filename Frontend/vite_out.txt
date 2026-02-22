@@ -1,0 +1,73 @@
+
+> eco-guard-frontend@0.0.0 dev
+> vite --host
+
+Re-optimizing dependencies because vite config has changed
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m348[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.246.140.171:[1m5173[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[2m11:14:54 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/CitizenDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:17:23 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m11:17:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/AdminDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:17:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/components/report/ImageCaptureModal.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:17:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/SignupPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:17:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LoginPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:17:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:17:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/CitizenDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:18:00 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m11:18:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/CitizenDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:18:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/AdminDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:18:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/SignupPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:18:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LoginPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:18:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:18:01 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/components/report/ImageCaptureModal.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:25:54 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LoginPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:25:54 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/SignupPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:25:54 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/CitizenDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:25:54 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/AdminDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:25:54 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:26:34 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:26:36 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:26:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:26:43 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:26:44 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:26:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:26:57 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:27:16 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:27:18 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:27:32 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:27:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:27:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:27:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:29:05 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LoginPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:29:05 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/SignupPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:29:05 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/AdminDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:29:05 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/CitizenDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:29:05 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:29:51 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:29:54 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:12 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:14 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:39 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:43 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:44 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:53 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:30:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:23 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:43 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:52 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:53 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/SignupPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:53 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/CitizenDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:53 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LoginPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:53 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/AdminDashboard.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:31:54 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:33:02 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m
+[2m11:33:09 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/pages/LandingPage.tsx, /@fs/C:/Users/madan/Desktop/projects/eco-guard/Frontend/src/index.css[22m

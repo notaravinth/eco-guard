@@ -1,0 +1,113 @@
+(node:28848) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+🚀 Server running on port 5000
+✅ Earth Engine initialized
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Flowers (60.3%) | Invasive: false
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Flowers (60.3%) | Invasive: false
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Lantana (Lantana camara) (85.4%) | Invasive: true
+📍 Checking: lat=13.05820087494195, lon=80.26294517138945, radius=500
+📸 Past images found: 1
+📸 Recent images found: 12
+🔍 Raw GEE result: { NDVI: -0.01357561569832491 }
+📊 Result: {
+  ndvi_change: -0.0136,
+  anomaly: false,
+  severity: 'LOW',
+  message: '✅ Normal vegetation'
+}
+[Cluster] Created new cluster d674d1fa-423c-475a-b33e-f1c90ecac3ee for Lantana (Lantana camara)
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Lantana (Lantana camara) (100.0%) | Invasive: true
+📍 Checking: lat=13.058204911069037, lon=80.26293505572492, radius=500
+📸 Past images found: 1
+📸 Recent images found: 12
+🔍 Raw GEE result: { NDVI: -0.013645870849914728 }
+📊 Result: {
+  ndvi_change: -0.0136,
+  anomaly: false,
+  severity: 'LOW',
+  message: '✅ Normal vegetation'
+}
+[Cluster] Updated cluster d674d1fa-423c-475a-b33e-f1c90ecac3ee → count 2
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Lantana (Lantana camara) (99.8%) | Invasive: true
+📍 Checking: lat=13.0872004, lon=80.2164421, radius=500
+📸 Past images found: 1
+📸 Recent images found: 12
+🔍 Raw GEE result: { NDVI: -0.2105733170244385 }
+📊 Result: {
+  ndvi_change: -0.2106,
+  anomaly: true,
+  severity: 'MEDIUM',
+  message: '🚨 Vegetation anomaly detected'
+}
+[Cluster] Created new cluster 654ee28f-7fcc-4fac-9a6e-d1338cdefcaa for Lantana (Lantana camara)
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Lantana (Lantana camara) (99.9%) | Invasive: true
+📍 Checking: lat=13.085697176187267, lon=80.21409813201669, radius=500
+📸 Past images found: 1
+📸 Recent images found: 12
+🔍 Raw GEE result: { NDVI: -0.20415496233468142 }
+📊 Result: {
+  ndvi_change: -0.2042,
+  anomaly: true,
+  severity: 'MEDIUM',
+  message: '🚨 Vegetation anomaly detected'
+}
+[Cluster] Updated cluster 654ee28f-7fcc-4fac-9a6e-d1338cdefcaa → count 2
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Lantana (Lantana camara) (99.9%) | Invasive: true
+📍 Checking: lat=13.081420750174805, lon=80.22035873328986, radius=500
+📸 Past images found: 1
+📸 Recent images found: 12
+🔍 Raw GEE result: { NDVI: -0.16233669949228394 }
+📊 Result: {
+  ndvi_change: -0.1623,
+  anomaly: true,
+  severity: 'MEDIUM',
+  message: '🚨 Vegetation anomaly detected'
+}
+[Cluster] Updated cluster 654ee28f-7fcc-4fac-9a6e-d1338cdefcaa → count 3
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Lantana (Lantana camara) (100.0%) | Invasive: true
+📍 Checking: lat=13.086606290738233, lon=80.22554528811422, radius=500
+📸 Past images found: 1
+📸 Recent images found: 12
+🔍 Raw GEE result: { NDVI: -0.2031632841074692 }
+📊 Result: {
+  ndvi_change: -0.2032,
+  anomaly: true,
+  severity: 'MEDIUM',
+  message: '🚨 Vegetation anomaly detected'
+}
+[Cluster] Updated cluster 654ee28f-7fcc-4fac-9a6e-d1338cdefcaa → count 4
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Lantana (Lantana camara) (99.8%) | Invasive: true
+📍 Checking: lat=13.086452423172371, lon=80.20891498787076, radius=500
+📸 Past images found: 1
+📸 Recent images found: 12
+🔍 Raw GEE result: { NDVI: -0.24211561140690813 }
+📊 Result: {
+  ndvi_change: -0.2421,
+  anomaly: true,
+  severity: 'MEDIUM',
+  message: '🚨 Vegetation anomaly detected'
+}
+[Cluster] Updated cluster 654ee28f-7fcc-4fac-9a6e-d1338cdefcaa → count 5
+[Cluster] ⚠️ Cluster 654ee28f-7fcc-4fac-9a6e-d1338cdefcaa ESCALATED
+[ModelServer] Sending image for identification...
+[ModelServer] Identified: Lantana (Lantana camara) (85.4%) | Invasive: true
+📍 Checking: lat=13.0872004, lon=80.2164421, radius=500
+📸 Past images found: 1
+📸 Recent images found: 12
+🔍 Raw GEE result: { NDVI: -0.2105733170244385 }
+📊 Result: {
+  ndvi_change: -0.2106,
+  anomaly: true,
+  severity: 'MEDIUM',
+  message: '🚨 Vegetation anomaly detected'
+}
+[Cluster] Created new cluster 45823f43-434a-49fc-8c96-630ea0b29356 for Lantana (Lantana camara)
