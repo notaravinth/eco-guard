@@ -9,12 +9,22 @@ import os
 app = Flask(__name__)
 
 # Load model and class names
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "models", "ecoguard_plant_model_final.h5")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "models", "ecoguard_plant_model.h5")
 CLASS_NAMES_PATH = os.path.join(os.path.dirname(__file__), "models", "class_names.json")
 
 print("Loading model...")
+# Custom wrapper to handle deprecated 'groups' parameter in old models
+class DepthwiseConv2DWrapper(tf.keras.layers.DepthwiseConv2D):
+    def __init__(self, **kwargs):
+        kwargs.pop('groups', None)  # Remove unsupported 'groups' parameter
+        super().__init__(**kwargs)
+
 # compile=False skips optimizer loading — avoids version mismatch errors
-model = tf.keras.models.load_model(MODEL_PATH, compile=False)
+model = tf.keras.models.load_model(
+    MODEL_PATH, 
+    compile=False,
+    custom_objects={'DepthwiseConv2D': DepthwiseConv2DWrapper}
+)
 model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 print("✅ Model loaded!")
 
