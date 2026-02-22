@@ -1,10 +1,28 @@
 from flask import Flask, request, jsonify
+import os
+import json
+import io
+
+# ── Keras 3 / TF 2.16+ compatibility patch ───────────────────────────────────
+# The .h5 was saved with Keras 2, which wrote `groups=1` into DepthwiseConv2D's
+# saved config. Keras 3 raises ValueError when it sees that unknown kwarg.
+# The h5 loader calls DepthwiseConv2D.from_config(config), which does cls(**config).
+# Patching from_config to strip `groups` before the call fixes it without any
+# new packages or internet access.
+import keras.layers as _kl
+_orig_from_config = _kl.DepthwiseConv2D.from_config.__func__  # underlying function
+
+@classmethod
+def _patched_from_config(cls, config):
+    config.pop("groups", None)
+    return _orig_from_config(cls, config)
+
+_kl.DepthwiseConv2D.from_config = _patched_from_config
+# ─────────────────────────────────────────────────────────────────────────────
+
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-import io
-import json
-import os
 
 app = Flask(__name__)
 
@@ -13,6 +31,7 @@ MODEL_PATH = os.path.join(os.path.dirname(__file__), "models", "ecoguard_plant_m
 CLASS_NAMES_PATH = os.path.join(os.path.dirname(__file__), "models", "class_names.json")
 
 print("Loading model...")
+<<<<<<< HEAD
 # Custom wrapper to handle deprecated 'groups' parameter in old models
 class DepthwiseConv2DWrapper(tf.keras.layers.DepthwiseConv2D):
     def __init__(self, **kwargs):
@@ -26,6 +45,10 @@ model = tf.keras.models.load_model(
     custom_objects={'DepthwiseConv2D': DepthwiseConv2DWrapper}
 )
 model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
+=======
+model = tf.keras.models.load_model(MODEL_PATH, compile=False)
+>>>>>>> f5fd8796922fb144319043f5ff47b5599c24b0f5
+y"])
 print("✅ Model loaded!")
 
 with open(CLASS_NAMES_PATH) as f:

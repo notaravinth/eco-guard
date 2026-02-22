@@ -9,7 +9,7 @@ import threading
 
 # ── Paths ──────────────────────────────────────────────────────────────
 BASE    = os.path.dirname(os.path.abspath(__file__))
-MODEL   = os.path.join(BASE, "models", "ecoguard_plant_model.h5")  # Try the other model file
+MODEL   = os.path.join(BASE, "models", "ecoguard_plant_model_final.h5")
 CLASSES = os.path.join(BASE, "models", "class_names.json")
 
 with open(CLASSES) as f:

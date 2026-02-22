@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import lantanaCamaraImg from "../assets/lantana-camara.jpeg";
@@ -6,11 +7,27 @@ import prosopisJulifloraImg from "../assets/Prosopis Juliflora.jpeg";
 import mapClusterImg from "../assets/map cluster.jpeg";
 
 export default function LandingPage() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#060d06] text-white overflow-x-hidden">
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-8 py-3 md:py-4 border-b border-white/5 bg-[#060d06]/80 backdrop-blur-md">
-        <div className="flex items-center gap-2">
+      <nav
+        className={`fixed left-1/2 -translate-x-1/2 z-50 flex items-center justify-between backdrop-blur-md transition-[top,width,padding,border-radius,background-color,box-shadow,border-color] duration-700 delay-100 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
+          scrolled
+            ? "top-3 w-[calc(100%-2rem)] max-w-5xl px-4 md:px-6 py-3 rounded-2xl border border-white/10 bg-[#060d06]/95 shadow-xl shadow-black/50"
+            : "top-0 w-full px-4 md:px-8 py-3 rounded-none border-b border-white/5 bg-[#060d06]/80 shadow-none"
+        }`}
+      >
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex items-center gap-2 focus:outline-none"
+        >
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-700 flex items-center justify-center">
             <svg
               className="w-5 h-5 text-white"
@@ -29,7 +46,7 @@ export default function LandingPage() {
           <span className="text-white font-semibold text-sm tracking-wide">
             EcoGuard
           </span>
-        </div>
+        </button>
         <div className="hidden md:flex items-center gap-1 bg-[#111811] border border-white/10 rounded-full px-2 py-1">
           <a
             href="#how"
@@ -63,6 +80,9 @@ export default function LandingPage() {
           Sign In
         </Link>
       </nav>
+
+      {/* Navbar spacer */}
+      <div className="h-16" />
 
       {/* Hero */}
       <div className="relative z-10 flex flex-col items-center text-center bg-radial from-green-950 to-black pt-20 pb-20 px-4 overflow-hidden">
@@ -653,7 +673,7 @@ export default function LandingPage() {
         className="relative z-10 border-t border-white/5 px-4 md:px-8 py-8 md:py-10"
       >
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-green-700 flex items-center justify-center">
               <svg
                 className="w-4 h-4 text-white"
@@ -673,7 +693,7 @@ export default function LandingPage() {
             <span className="text-gray-600 text-xs ml-1">
               Invasive Species Prediction
             </span>
-          </div>
+          </Link>
           <div className="flex flex-wrap justify-center gap-4">
             {["How it Works", "Species", "Community", "About"].map((link) => (
               <a
