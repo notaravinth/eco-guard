@@ -94,7 +94,7 @@ export default function CitizenDashboard() {
 
       if (insertError)
         throw new Error(`DB insert failed: ${insertError.message}`);
-      console.log("[EcoGuard] Sighting created:", sighting);
+      console.log("[EcoSentry] Sighting created:", sighting);
 
       // ── Step 3: Call backend AI ──────────────────────────────────
       const backendUrl = import.meta.env.VITE_BACKEND_URL as string;
@@ -131,7 +131,7 @@ export default function CitizenDashboard() {
         }[];
       };
 
-      console.log("[EcoGuard] Plant ID result:", aiJson);
+      console.log("[EcoSentry] Plant ID result:", aiJson);
 
       // ── Step 4: Update sighting with AI result ───────────────────
       const { error: aiUpdateError } = await supabase
@@ -180,7 +180,7 @@ export default function CitizenDashboard() {
         message: string;
       };
 
-      console.log("[EcoGuard] Satellite result:", satJson);
+      console.log("[EcoSentry] Satellite result:", satJson);
 
       // ── Step 6: Insert satellite_verifications row ────────────────
       const { error: satInsertError } = await supabase
@@ -242,7 +242,7 @@ export default function CitizenDashboard() {
           escalated: boolean;
         };
 
-        console.log("[EcoGuard] Cluster result:", clusterJson);
+        console.log("[EcoSentry] Cluster result:", clusterJson);
 
         // If backend escalated the cluster, update the sighting status to match
         if (clusterJson.escalated) {
@@ -264,7 +264,7 @@ export default function CitizenDashboard() {
       }
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Submission failed";
-      console.error("[EcoGuard]", msg);
+      console.error("[EcoSentry]", msg);
       showToast(msg, false);
     } finally {
       setSubmitting(false);
@@ -330,7 +330,7 @@ export default function CitizenDashboard() {
             </svg>
           </div>
           <span className="text-white font-semibold text-sm tracking-wide">
-            EcoGuard
+            EcoSentry
           </span>
         </div>
         <div className="flex items-center gap-3">

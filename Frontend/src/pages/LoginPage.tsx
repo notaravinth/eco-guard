@@ -43,7 +43,7 @@ export default function LoginPage() {
               />
             </svg>
           </div>
-          <span className="text-white font-semibold text-lg">EcoGuard</span>
+          <span className="text-white font-semibold text-lg">EcoSentry</span>
         </div>
 
         <div className="bg-[#0d150d] border border-white/10 rounded-2xl p-8">

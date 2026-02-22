@@ -1,4 +1,5 @@
-require("dotenv").config();
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, ".env") });
 const express = require("express");
 const cors = require("cors");
 const { checkNDVI } = require("./satellite");
@@ -55,11 +56,10 @@ app.post("/satellite-check", (req, res) => {
 });
 
 /* ===========================
-   🔹 PLANT IDENTIFICATION via Pl@ntNet API
-   + Invasive species check
+   🔹 PLANT IDENTIFICATION via trained H5 model
+   Proxies the image to model_server.py (port 5002)
 =========================== */
-const PLANTNET_API_KEY = process.env.PLANTNET_API_KEY;
-const PLANTNET_URL = `https://my-api.plantnet.org/v2/identify/all?include-related-images=false&no-reject=false&nb-results=5&lang=en&api-key=${PLANTNET_API_KEY}`;
+const MODEL_SERVER_URL = process.env.MODEL_SERVER_URL || "http://localhost:5002";
 
 app.post("/predict", upload.single("image"), async (req, res) => {
   try {
@@ -67,21 +67,16 @@ app.post("/predict", upload.single("image"), async (req, res) => {
       return res.status(400).json({ error: "No image uploaded" });
     }
 
-    if (!PLANTNET_API_KEY) {
-      return res.status(500).json({ error: "PLANTNET_API_KEY not configured" });
-    }
-
-    // Build multipart form for Pl@ntNet API
+    // Forward image to Python model server
     const form = new FormData();
-    form.append("images", req.file.buffer, {
+    form.append("image", req.file.buffer, {
       filename: req.file.originalname || "plant.jpg",
       contentType: req.file.mimetype || "image/jpeg",
     });
-    form.append("organs", "auto");
 
-    console.log("[PlantNet] Sending image for identification...");
+    console.log("[Model] Sending image to Python model server …");
 
-    const response = await fetch(PLANTNET_URL, {
+    const response = await fetch(`${MODEL_SERVER_URL}/predict`, {
       method: "POST",
       body: form,
       headers: form.getHeaders(),
@@ -89,72 +84,19 @@ app.post("/predict", upload.single("image"), async (req, res) => {
 
     if (!response.ok) {
       const errText = await response.text();
-      console.error("[PlantNet] API error:", response.status, errText);
+      console.error("[Model] Server error:", response.status, errText);
       return res.status(502).json({
-        error: `Pl@ntNet API error (${response.status})`,
+        error: `Model server error (${response.status})`,
         details: errText,
       });
     }
 
-    const plantData = await response.json();
-
-    if (!plantData.results || plantData.results.length === 0) {
-      return res.json({
-        species: "Unknown",
-        confidence: 0,
-        invasive: false,
-        message: "Could not identify this plant. Try a clearer photo.",
-      });
-    }
-
-    // Best match
-    const top = plantData.results[0];
-    const scientificName =
-      top.species?.scientificNameWithoutAuthor || "Unknown";
-    const commonNames = top.species?.commonNames || [];
-    const family = top.species?.family?.scientificNameWithoutAuthor || "";
-    const confidence = top.score || 0;
-    const gbifId = top.gbif?.id || null;
-
-    // Check if invasive
-    const invasiveResult = checkInvasive(scientificName);
-
-    // Build top-5 results for frontend
-    const topResults = plantData.results.slice(0, 5).map((r) => {
-      const rInvasive = checkInvasive(
-        r.species?.scientificNameWithoutAuthor || "",
-      );
-      return {
-        scientificName: r.species?.scientificNameWithoutAuthor || "Unknown",
-        commonNames: r.species?.commonNames || [],
-        family: r.species?.family?.scientificNameWithoutAuthor || "",
-        score: r.score || 0,
-        invasive: rInvasive.invasive,
-        invasiveInfo: rInvasive.info || null,
-      };
-    });
-
-    // Build species display name
-    const displayName =
-      commonNames.length > 0
-        ? `${commonNames[0]} (${scientificName})`
-        : scientificName;
-
+    const result = await response.json();
     console.log(
-      `[PlantNet] Identified: ${displayName} (${(confidence * 100).toFixed(1)}%) | Invasive: ${invasiveResult.invasive}`,
+      `[Model] Identified: ${result.species} (${(result.confidence * 100).toFixed(1)}%) | Invasive: ${result.invasive}`,
     );
 
-    res.json({
-      species: displayName,
-      scientificName,
-      commonNames,
-      family,
-      confidence: Math.round(confidence * 10000) / 10000,
-      gbifId,
-      invasive: invasiveResult.invasive,
-      invasiveInfo: invasiveResult.info || null,
-      topResults,
-    });
+    res.json(result);
   } catch (err) {
     console.error("❌ Prediction error:", err.message);
     res.status(500).json({

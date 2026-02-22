@@ -1,0 +1,7 @@
+[model_server] Loading model …
+[model_server] Model loaded OK
+[model_server] Input size: 224×224
+[model_server] Labels: {0: 'lanthana', 1: 'Parthenium', 2: 'Prosopis', 3: 'Other Plants', 4: 'Flowers'}
+[model_server] Starting on port 5002 ...
+ * Serving Flask app 'model_server'
+ * Debug mode: off

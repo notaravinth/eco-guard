@@ -44,7 +44,7 @@ export default function LandingPage() {
             </svg>
           </div>
           <span className="text-white font-semibold text-sm tracking-wide">
-            EcoGuard
+            EcoSentry
           </span>
         </button>
         <div className="hidden md:flex items-center gap-1 bg-[#111811] border border-white/10 rounded-full px-2 py-1">
@@ -127,7 +127,7 @@ export default function LandingPage() {
             Process
           </span>
           <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-white mt-2">
-            How EcoGuard Works
+            How EcoSentry Works
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg">
             Four simple steps to protect ecosystems from invasive species —
@@ -689,7 +689,7 @@ export default function LandingPage() {
                 />
               </svg>
             </div>
-            <span className="text-white font-semibold text-sm">EcoGuard</span>
+            <span className="text-white font-semibold text-sm">EcoSentry</span>
             <span className="text-gray-600 text-xs ml-1">
               Invasive Species Prediction
             </span>
@@ -706,7 +706,7 @@ export default function LandingPage() {
             ))}
           </div>
           <p className="text-gray-600 text-xs">
-            © 2026 EcoGuard. EcoTech Track.
+            © 2026 EcoSentry. EcoTech Track.
           </p>
         </div>
       </footer>
